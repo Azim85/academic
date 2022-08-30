@@ -6,9 +6,6 @@
         Jami o'zbek tili yo'nalishidagi o'g'il bola talabalar:
         {{ data.length }} ta
       </p>
-      <div class="search">
-        <input type="text" v-model="search" />
-      </div>
     </div>
     <div
       class="table-responsive"
@@ -59,17 +56,30 @@
 <script>
 import sortedArray from "@/data/students";
 import heading from "@/data/header";
-import { reactive } from "vue";
+import { reactive, ref, watch } from "vue";
 
 export default {
   name: "App",
   setup() {
-    const data = reactive(sortedArray);
+    let data = ref(sortedArray);
+    let searchData = ref({});
     const head = reactive(heading);
+    let search = ref("");
+    let isData = ref(false);
+
+
+    watch(search, () => {
+      searchData.value = sortedArray
+          .slice()
+          .filter((el) => el.FIO.toLowerCase().startsWith(search.value))
+    });
 
     return {
       data,
       head,
+      search,
+      searchData,
+      isData,
     };
   },
 };

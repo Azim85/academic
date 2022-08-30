@@ -17096,7 +17096,6 @@ const arr = () => [
 ];
 
 const sortedArray = arr().slice().sort((a, b) => b.umumiy_ball - a.umumiy_ball).filter((student) => student.Jinsi === 'Erkak' && student.talim_tili === 'O`zbek')
-console.log(sortedArray);
 
 export default sortedArray;
 
