@@ -2,7 +2,13 @@
   <div class="container" style="height: 80vh">
     <div class="header">
       <h1 class="text-center">Fargona academik litseyi</h1>
-      <p>Jami o'zbek tili yo'nalishidagi o'g'il bola talabalar: {{ data.length }} ta</p>
+      <p>
+        Jami o'zbek tili yo'nalishidagi o'g'il bola talabalar:
+        {{ data.length }} ta
+      </p>
+      <div class="search">
+        <input type="text" v-model="search" />
+      </div>
     </div>
     <div
       class="table-responsive"
@@ -43,17 +49,6 @@
             <td>{{ d.FIELD18 }}</td>
             <td>{{ d.umumiy_ball }}</td>
             <td>{{ d.Sana }}</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
           </tr>
         </tbody>
       </table>
